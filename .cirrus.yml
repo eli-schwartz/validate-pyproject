@@ -111,6 +111,15 @@ linux_task:
       allow_failures: true  # Experimental
   install_script:
     - python -m pip install --upgrade pip tox pipx
+  debug_coveralls_script:
+    - echo $CI_NAME
+    - echo $CI_BRANCH
+    - echo $CI_PULL_REQUEST
+    - echo $CI_BUILD_NUMBER
+    - echo $CI_BUILD_URL
+    - echo $CI_JOB_ID
+    - echo $COVERALLS_PARALLEL
+    - echo $COVERALLS_FLAG_NAME
   <<: *test-template
 
 mamba_task:
